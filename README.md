@@ -15,4 +15,3 @@ Seleccionar un directorio donde descargar el proyecto y luego, ejecutar:
 
 git clone git@gitlab.com:ingeniaca/demos/migracion-usuario-keycloaka-a-keycloakb.git
 
-
