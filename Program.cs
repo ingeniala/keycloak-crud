@@ -69,7 +69,9 @@ namespace Keycloak
 
                     Console.WriteLine("-----------------------------------------------\n");
                     stopwatch.Stop();
+
                     TimeSpan tiempoTranscurrido = stopwatch.Elapsed;
+
                     Console.WriteLine($"Tiempo transcurrido: {tiempoTranscurrido.Minutes} minutos, {tiempoTranscurrido.Seconds} segundos, {tiempoTranscurrido.Milliseconds} milisegundos");
                     Console.WriteLine("-----------------------------------------------\n");
                 }
