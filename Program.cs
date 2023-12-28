@@ -39,7 +39,7 @@ namespace Keycloak
                     switch (option)
                     {
                         case "1":
-                            CrearLoteUsuariosRealmA(1500);
+                            CrearLoteUsuariosRealmA(500);
                             break;
                         case "2":
                             ListarUsuariosRealmA();
