@@ -12,8 +12,10 @@ namespace KeycloakRestAPI
     public class InfoKeycloak
     {
         public string url = "";
+
         public string client_id = "";
         public string client_secret = "";
+
         public string grant_type = "client_credentials";
         public string token = "";
         public string realm = "";
@@ -33,6 +35,7 @@ namespace KeycloakRestAPI
         public string max = "200";
 
         /*
+        API Keyclloak
         "issuer":"http://172.10.1.226:8081/realms/ingenia1",
         "authorization_endpoint":"http://172.10.1.226:8081/realms/ingenia1/protocol/openid-connect/auth",
         "token_endpoint":"http://172.10.1.226:8081/realms/ingenia1/protocol/openid-connect/token",

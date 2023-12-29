@@ -17,11 +17,11 @@ namespace Keycloak
         {
             try
             {
-                KC_Origen.token = keycloakApi.GetToken(KC_Origen).access_token;
-                KC_Destino.token = keycloakApi.GetToken(KC_Destino).access_token;
-
                 while (true)
                 {
+                    KC_Origen.token = keycloakApi.GetToken(KC_Origen).access_token;
+                    KC_Destino.token = keycloakApi.GetToken(KC_Destino).access_token;
+
                     Console.WriteLine("Seleccione una opción:");
                     Console.WriteLine("1. Crear lote de usuarios de prueba en el Realm A");
                     Console.WriteLine("2. Listar usuarios del Realm A");
@@ -39,7 +39,7 @@ namespace Keycloak
                     switch (option)
                     {
                         case "1":
-                            CrearLoteUsuariosRealmA(1500);
+                            CrearLoteUsuariosRealmA(100);
                             break;
                         case "2":
                             ListarUsuariosRealmA();
@@ -129,6 +129,7 @@ namespace Keycloak
         private static List<User> ListarUsuariosRealmA()
         {
             int Contador = 0;
+            KC_Origen.first = "0";
             List<User> ListadoUsuarios = new List<User>();
 
             var Listado = keycloakApi.GetUsers(KC_Origen);
@@ -165,6 +166,7 @@ namespace Keycloak
         private static void BorrarUsuariosRealmA()
         {
             int CantidadUsuariosBorrados = 0;
+            KC_Origen.first = "0";
 
             var listadoUsuarios = ListarUsuariosRealmA();
 
@@ -194,6 +196,7 @@ namespace Keycloak
         private static void CopiarUsuariosRealmAToB()
         {
             int CantidadUsuariosCopiados = 0;
+            KC_Origen.first = "0";
 
             var listaUsuarios = ListarUsuariosRealmA();
 
@@ -219,6 +222,8 @@ namespace Keycloak
         private static List<User> ListarUsuariosRealmB()
         {
             int Contador = 0;
+            KC_Destino.first = "0";
+
             List<User> ListadoUsuarios = new List<User>();
 
             var Listado = keycloakApi.GetUsers(KC_Destino);
@@ -237,7 +242,7 @@ namespace Keycloak
                 ListadoUsuarios.AddRange(Listado);
 
                 Contador += Listado.Count;
-                KC_Origen.first = Contador.ToString();
+                KC_Destino.first = Contador.ToString();
 
                 if (Listado.Count == 0)
                 {
@@ -254,6 +259,7 @@ namespace Keycloak
         private static void BorrarUsuariosRealmB()
         {
             int CantidadUsuariosBorrados = 0;
+            KC_Destino.first = "0";
 
             var listadoUsuarios = ListarUsuariosRealmB();
 
