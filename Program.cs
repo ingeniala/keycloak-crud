@@ -22,6 +22,9 @@ namespace Keycloak
                     KC_Origen.token = keycloakApi.GetToken(KC_Origen).access_token;
                     KC_Destino.token = keycloakApi.GetToken(KC_Destino).access_token;
 
+                    KC_Origen.first = "0";
+                    KC_Destino.first = "0";
+
                     Console.WriteLine("Seleccione una opción:");
                     Console.WriteLine("1. Crear lote de usuarios de prueba en el Realm A");
                     Console.WriteLine("2. Listar usuarios del Realm A");
@@ -129,7 +132,6 @@ namespace Keycloak
         private static List<User> ListarUsuariosRealmA()
         {
             int Contador = 0;
-            KC_Origen.first = "0";
             List<User> ListadoUsuarios = new List<User>();
 
             var Listado = keycloakApi.GetUsers(KC_Origen);
@@ -166,7 +168,6 @@ namespace Keycloak
         private static void BorrarUsuariosRealmA()
         {
             int CantidadUsuariosBorrados = 0;
-            KC_Origen.first = "0";
 
             var listadoUsuarios = ListarUsuariosRealmA();
 
@@ -196,7 +197,6 @@ namespace Keycloak
         private static void CopiarUsuariosRealmAToB()
         {
             int CantidadUsuariosCopiados = 0;
-            KC_Origen.first = "0";
 
             var listaUsuarios = ListarUsuariosRealmA();
 
@@ -222,7 +222,6 @@ namespace Keycloak
         private static List<User> ListarUsuariosRealmB()
         {
             int Contador = 0;
-            KC_Destino.first = "0";
 
             List<User> ListadoUsuarios = new List<User>();
 
@@ -259,7 +258,6 @@ namespace Keycloak
         private static void BorrarUsuariosRealmB()
         {
             int CantidadUsuariosBorrados = 0;
-            KC_Destino.first = "0";
 
             var listadoUsuarios = ListarUsuariosRealmB();
 
