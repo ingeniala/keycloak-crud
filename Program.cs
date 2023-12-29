@@ -70,7 +70,7 @@ namespace Keycloak
                             break;
                     }
 
-                    Console.WriteLine("-------------------------------------------------\n");
+                    Console.WriteLine("------------------------------------------------\n");
                     stopwatch.Stop();
 
                     TimeSpan tiempoTranscurrido = stopwatch.Elapsed;
