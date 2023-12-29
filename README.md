@@ -48,4 +48,3 @@ Puedes abrir el proyecto en visual studio code o visual studio y lo ejecutas.
 * Toma el id de la imagen
 * docker run -v /home/CARPETA_PROYECTO:/app -it ID_IMAGEN_DOCKER
 * Puedes usar una ruta relavita: docker run -v .:/app -it ID_IMAGEN_DOCKER
-
