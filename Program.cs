@@ -171,7 +171,7 @@ namespace Keycloak
 
             var listadoUsuarios = ListarUsuariosRealmA();
 
-            if (listadoUsuarios.Count ==0)
+            if (listadoUsuarios.Count == 0)
             {
                 return;
             }
